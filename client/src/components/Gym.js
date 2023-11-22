@@ -7,6 +7,7 @@ function Gym({name, rating, location, description, url}) {
     const handleToggle = () => {
         setRenderDescription(!renderDescription)
     }
+
    
     return(
         <div className='cards_item'>
@@ -19,6 +20,7 @@ function Gym({name, rating, location, description, url}) {
                 <p>Name : {name}</p>
                 <p>Location : {location}</p>
                 <p>Rating: {rating}</p>
+                
             </div>
         </div>
     )

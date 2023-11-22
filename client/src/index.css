@@ -1,57 +1,43 @@
 :root {
-  --bg: #282c34;
-  --header: #fff;
-  --link: #61dafb;
-  --text: hsla(0, 0%, 100%, 0.88);
-}
-
-.mainpage {
-  text-align: center;
-  padding: 20px;
-}
-
-.gym-app-title {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-body, h1, h2, p, ul {
-  margin: 0;
-  padding: 0;
+  --primary-color: #3494e6;
+  --secondary-color: #ec6e64;
+  --text-color: #333;
+  --background-color: #f4f4f4;
 }
 
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background-size: cover;
+  color: var(--text-color);
+  margin: 0;
 }
 
 .mainpage {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
 
+.gym-app-title,
 .title {
-  text-align: center;
-  font-size: 2em;
-  color: #333;
+  font-size: 2rem;
+  color: var(--text-color);
   margin-bottom: 20px;
 }
 
-
-
 .add-gym-form {
   margin-top: 20px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.95);
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .add-gym-form label {
@@ -69,7 +55,7 @@ body {
 }
 
 .add-gym-form button {
-  background-color: #4caf50;
+  background-color: var(--primary-color);
   color: #fff;
   padding: 12px;
   border: none;
@@ -82,23 +68,22 @@ body {
   background-color: #45a049;
 }
 
-
 .cards {
   list-style: none;
   padding: 0;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
 
 .cards_item {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 10px; 
+  margin: 10px;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
-  flex: 1 0 300px; 
+  flex: 1 0 300px;
 }
 
 .cards_item:hover {
@@ -132,39 +117,9 @@ body {
   color: #888;
 }
 
-
-input {
-  margin-bottom: 10px;
-  padding: 8px;
-  font-size: 1em;
-}
-
-button {
-  padding: 10px;
-  font-size: 1em;
-  background-color: #4caf50;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #45a049;
-}
-
-body {
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #3494e6, #ec6e64);
-  background-size: cover;
-}
-
-
 .navbarclass {
   text-align: center;
-}
-
-.navbarclass {
-  background-color: #3494e6;
+  background-color: var(--primary-color);
   color: #fff;
   font-family: Arial, sans-serif;
   padding: 10px;
