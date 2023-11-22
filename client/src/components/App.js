@@ -1,8 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { Switch, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import GymCard from './GymCard'
+import Navbar from './Navbar'
 
 function App() {
-  return <h1>Project Client</h1>;
+  return (
+    <div className='mainpage'>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path='' element={<GymCard />} />
+          <Route />
+          <Route  />
+        </Routes>
+      </Router>
+    </div>
+
+  )
 }
 
 export default App;
