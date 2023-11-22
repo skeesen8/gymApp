@@ -21,14 +21,7 @@ function App() {
     <div className='mainpage'>
         <AddGymForm/>
         <GymCard gyms={gyms}/>
-      {/* <Router>
-        <Navbar />
-        <Routes>
-          <Route path='' element={<GymCard />} />
-          <Route />
-          <Route  />
-        </Routes>
-      </Router> */}
+    
     </div>
 
   )

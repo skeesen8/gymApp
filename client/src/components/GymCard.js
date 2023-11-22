@@ -11,7 +11,7 @@ const GymCard = ({gyms}) => {
                 rating={gymObj.rating}
                 location={gymObj.location}
                 description={gymObj.description}
-                url={gymObj.url}
+                url={gymObj.image}
             />
         )
     })
