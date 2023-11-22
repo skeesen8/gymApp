@@ -13,6 +13,7 @@ class Gym(db.Model, SerializerMixin):
     description = db.Column(db.String)
     rating = db.Column(db.Integer)
     image = db.Column(db.String)
+    location = db.Column(db.String)
 #     reviews = db.relationship('Review', back_populates = 'gym', cascade = 'all, delete-orphan')
 #     users = association_proxy('reviews', 'user')
 

@@ -1,5 +1,5 @@
-// import React from 'react';
-// import Gym from './Gym'
+import React from 'react';
+import Gym from './Gym'
 
 const GymCard = ({gyms}) => {
     const renderGym = gyms.map((gymObj) =>{
@@ -18,4 +18,4 @@ const GymCard = ({gyms}) => {
     return <ul className='cards'>{renderGym}</ul>
 }
 
-// export default GymCard
+export default GymCard

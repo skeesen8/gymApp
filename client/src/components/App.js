@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 // import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import GymCard from './GymCard'
@@ -20,7 +20,7 @@ function App() {
   return (
     <div className='mainpage'>
         <AddGymForm/>
-        {/* <GymCard /> */}
+        <GymCard gyms={gyms}/>
       {/* <Router>
         <Navbar />
         <Routes>
