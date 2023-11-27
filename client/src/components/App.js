@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 // import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import GymCard from './GymCard'
 import Navbar from './Navbar'
@@ -8,6 +9,7 @@ function App() {
     <div className='mainpage'>
       <Router>
         <Navbar />
+        <AddGymForm/>
         <Routes>
           <Route path='' element={<GymCard />} />
           <Route />
