@@ -1,18 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { Switch, Route } from "react-router-dom";
-import AddGymForm from "./AddGymForm";
+
+// import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import GymCard from './GymCard'
+import Navbar from './Navbar'
 
 function App() {
-  return( 
-    <div>
-      <h1>Project Client</h1>
-      <AddGymForm/>
-
-
-
+  return (
+    <div className='mainpage'>
+      <Router>
+        <Navbar />
+        <AddGymForm/>
+        <Routes>
+          <Route path='' element={<GymCard />} />
+          <Route />
+          <Route  />
+        </Routes>
+      </Router>
     </div>
-  
-  );
+
+  )
 }
 
 export default App;
