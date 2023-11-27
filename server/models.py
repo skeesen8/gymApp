@@ -9,6 +9,7 @@ class Gym(db.Model, SerializerMixin):
 
     id = db.Column(db.Integer, primary_key=True)
     name  = db.Column(db.String, nullable=False)
+    location = db.Column(db.String)
     description = db.Column(db.String)
     rating = db.Column(db.Integer)
     image = db.Column(db.String)

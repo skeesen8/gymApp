@@ -23,7 +23,7 @@ if __name__ == '__main__':
 
 class Gyms(Resource):
     def get(self):
-        gyms = [for gym in Gym.query.all()]
+        gyms = [gym.to_didct() for gym in Gym.query.all()]
     def post(self):
         params = request.json
         try: 
