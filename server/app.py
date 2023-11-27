@@ -23,10 +23,15 @@ if __name__ == '__main__':
 
 class Gyms(Resource):
     def get(self):
-        gyms = [for gym in Gym.query.all()]
+        gyms = [gym.to_dict() for gym in Gym.query.all()]
+        if not gym: 
+            return make_response({'error': 'not a gym'}, 401)
+        else: 
+            return make_response(gyms, 200)
+
     def post(self):
         params = request.json
-        try: 
+        try:
             new_gym = Gym(
             name = params['name'],
             description=params['description'],
@@ -40,7 +45,7 @@ class Gyms(Resource):
         return make_response(new_gym.todict(), 201)
              
         
-api.add_resource(Gyms, '/addgym')
+api.add_resource(Gyms, '/addgyms')
 
     
 
