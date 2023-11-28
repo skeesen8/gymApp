@@ -60,9 +60,36 @@ class Get_gym_by_id(Resource):
             return make_response({'error':'gym not found'},400)
         else:
             return make_response(gym.to_dict(), 200)
+            
+    def delete(self, id):
+        gym = Gym.query.get(id)
+        if not gym:
+            return make_response({'error':'gym not found'},400)
+        else:
+            db.session.delete(gym)
+            db.session.commit()
+            return make_response('', 200)
+
+    def patch(self, id):
+        gym = Gym.query.get(id)
+        if not gym:
+            return make_response({'error':'not a gym'}, 400)
+        params = request.json
+        try:
+            for attr in params:
+                setattr(gym, attr, params[attr])
+        except:
+            return make_response( { 'error': [ 'user messed up' ] }, 422 )
+
+        db.session.commit()
+        return make_response(gym.to_dict(), 200)
+
+
 
 
 api.add_resource(Get_gym_by_id, '/gyms/<id>')
+
+
 
     
 if __name__ == '__main__':
