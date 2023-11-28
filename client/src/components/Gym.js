@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import { NavLink } from "react-router-dom"
+
 
 function Gym({name, rating, location, description, url}) {
     const [renderDescription, setRenderDescription] = useState(false)
@@ -8,6 +10,7 @@ function Gym({name, rating, location, description, url}) {
    
     return(
         <div className='cards_item'>
+
             <img onClick={handleToggle} src={url} alt={name} className='card_image'/>
             <div className='card_content'></div>
             <div className='card_title'>{name}</div>

@@ -11,10 +11,9 @@ function App() {
   const [gyms, setGym]=useState([])
 
   useEffect(()=> {
-    fetch("http://localhost:5555/addgym")
+    fetch("http://localhost:5555/gyms")
     .then((resp)=> resp.json())
     .then((gymData)=>setGym(gymData))
-    .then (console.log(gyms))
   },[])
   
   return (
