@@ -57,9 +57,18 @@ class Get_gym_by_id(Resource):
             return make_response({'error':'gym not found'},400)
         else:
             return make_response(gym.to_dict(), 200)
+    def delete(self, id):
+        gym = Gym.query.get(id)
+        if not gym:
+            return make_response({'error':'gym not found'},400)
+        else:
+            return make_response('', 200)
+        
 
 
 api.add_resource(Get_gym_by_id, '/gyms/<id>')
+
+
 
     
 if __name__ == '__main__':
