@@ -6,6 +6,7 @@ from config import db
 
 class Gym(db.Model, SerializerMixin):
     __tablename__ = 'gyms'
+    serialize_rules = ('-reviews',)
 
     id = db.Column(db.Integer, primary_key=True)
     name  = db.Column(db.String, nullable=False)

@@ -19,9 +19,7 @@ def index():
 
 
 
-class Gyms(Resource):
-    def get(self):
-        gyms = [gym for gym in Gym.query.all()]
+class Create_gyms(Resource):
     def post(self):
         params = request.json
         try: 
@@ -39,8 +37,32 @@ class Gyms(Resource):
         return make_response(new_gym.to_dict(), 201)
              
         
-api.add_resource(Gyms, '/addgym')
+api.add_resource(Create_gyms, '/addgym')
 
+
+class Get_all_gyms(Resource):
+    def get(self):
+        gyms = [gym.to_dict() for gym in Gym.query.all()]
+        if not gyms:
+            return make_response({'error':'not a gym'}, 400)
+        
+        return make_response(gyms, 200)
+
+api.add_resource(Get_all_gyms, '/gyms')
+
+class Get_gym_by_id(Resource):
+    def get(self, id):
+        gym = Gym.query.get(id)
+        if not gym:
+            return make_response({'error':'gym not found'},400)
+        else:
+            return make_response(gym.to_dict(), 200)
+
+
+api.add_resource(Get_gym_by_id, '/gyms/<id>')
+
+class All_reviews(Resource):
+    
     
 if __name__ == '__main__':
     app.run(port=5555, debug=True)

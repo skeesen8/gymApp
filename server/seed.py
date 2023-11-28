@@ -82,3 +82,9 @@ if __name__ == '__main__':
         db.session.commit()
 
         print("Done seeding!")
+
+
+        # create gym 
+        # view all gym => /gyms
+        # reviews
+        # delete
