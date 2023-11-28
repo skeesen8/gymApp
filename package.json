@@ -1,0 +1,23 @@
+{
+  "name": "gymapp",
+  "version": "1.0.0",
+  "description": "## Learning Goals",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skeesen8/gymApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skeesen8/gymApp/issues"
+  },
+  "homepage": "https://github.com/skeesen8/gymApp#readme",
+  "dependencies": {
+    "faker": "^5.5.3"
+  }
+}
