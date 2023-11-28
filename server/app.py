@@ -19,7 +19,10 @@ def index():
 
 
 
-class Create_gyms(Resource):
+class Gyms(Resource):
+    def get(self):
+        gyms = [gym.to_dict() for gym in Gym.query.all()]
+        return make_response(gyms,200)
     def post(self):
         params = request.json
         try: 
@@ -37,7 +40,7 @@ class Create_gyms(Resource):
         return make_response(new_gym.to_dict(), 201)
              
         
-api.add_resource(Create_gyms, '/addgym')
+api.add_resource(Gyms, '/addgym')
 
 
 class Get_all_gyms(Resource):
@@ -64,6 +67,8 @@ api.add_resource(Get_gym_by_id, '/gyms/<id>')
     
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
+
+
 
 
         
