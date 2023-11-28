@@ -56,8 +56,8 @@ class Get_gym_by_id(Resource):
         if not gym:
             return make_response({'error':'gym not found'},400)
         else:
-            return make_response(gym.to_dict(), 200)
-            
+            return make_response(gym.to_dict(rules = ('-reviews.user',)), 200)
+
     def delete(self, id):
         gym = Gym.query.get(id)
         if not gym:
