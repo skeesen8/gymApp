@@ -61,8 +61,6 @@ class Get_gym_by_id(Resource):
 
 api.add_resource(Get_gym_by_id, '/gyms/<id>')
 
-class All_reviews(Resource):
-    
     
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
