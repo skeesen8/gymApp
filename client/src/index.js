@@ -1,8 +1,29 @@
 import React from "react";
 import App from "./components/App";
 import "./index.css";
-import { createRoot } from "react-dom/client";
+import Gym from "./components/Gym";
+import AddGymForm from "./components/AddGymForm";
+import {createBrowserRouter,RouterProvider} from "react-router-dom"
+import ReactDOM from 'react-dom/client';
 
-const container = document.getElementById("root");
-const root = createRoot(container);
-root.render(<App />);
+
+
+
+const routes=[
+    {
+    path:"/",
+    element:<App />
+  },{
+    path:"/gyms/<id>",
+    element:<Gym />
+  },{
+    path:"/addgym",
+    element:<AddGymForm />
+  }
+  ]
+  const router=createBrowserRouter(routes)
+  
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+  root.render(
+   <RouterProvider router={router}/>
+  );
