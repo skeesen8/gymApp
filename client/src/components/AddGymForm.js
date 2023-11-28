@@ -30,22 +30,22 @@ const [newDescription,setDescription]= useState('')
         e.preventDefault();
         const newGym = {
             name:newName,
-            location: newLocation,
             rating: newRating,
-            url: newUrl,
+            image: newUrl,
             description: newDescription
+            // location: newLocation,
         }
         
-        fetch("http://localhost:5555/",{
+        fetch("http://localhost:5555/addgym",{
             method:"POST",
             headers:{
                 "Content-Type": "application/json",
             },
             body:JSON.stringify(newGym),
         })
-        .then(response => response.json())
-        // .then(newLegendFromServer => onNewLegend(newLegendFromServer));
-        // navigate("/players")
+        .then(response => response.text())
+        .then(console.log)
+        
 
     }
 
