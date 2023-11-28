@@ -3,6 +3,7 @@ import Gym from './Gym'
 
 const GymCard = ({gyms}) => {
     const renderGym = gyms.map((gymObj) =>{
+        console.log(gymObj)
         return(
             <Gym
                 key={gymObj.id}

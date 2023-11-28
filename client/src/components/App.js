@@ -6,17 +6,21 @@ import GymCard from './GymCard'
 import AddGymForm from "./AddGymForm";
 
 function App() {
+
+  const [gyms, setGym]=useState([])
+
+  useEffect(()=> {
+    fetch("http://localhost:5555/addgym")
+    .then((resp)=> resp.json())
+    .then((gymData)=>setGym(gymData))
+    .then (console.log(gyms))
+  },[])
+  
   return (
     <div className='mainpage'>
         <AddGymForm/>
-      {/* <Router>
-        <Navbar />
-        <Routes>
-          <Route path='' element={<GymCard />} />
-          <Route />
-          <Route  />
-        </Routes>
-      </Router> */}
+        <GymCard gyms = {gyms}/>
+      
     </div>
 
   )
