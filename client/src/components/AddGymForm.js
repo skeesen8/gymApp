@@ -4,6 +4,7 @@ import {useOutletContext} from "react-router-dom"
 import {useNavigate} from "react-router-dom"
 
 function AddGymForm (){
+   
 
 const [newName,setName] = useState('')
 const [newRating,setRating] = useState('')
