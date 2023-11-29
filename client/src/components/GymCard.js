@@ -1,12 +1,20 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Gym from './Gym'
 
-const GymCard = ({gyms}) => {
+function GymCard(){
+    const [gyms, setGym]=useState([])
+
+  useEffect(()=> {
+    fetch("http://localhost:5555/gyms")
+    .then((resp)=> resp.json())
+    .then((gymData)=>setGym(gymData))
+  },[])
     const renderGym = gyms.map((gymObj) =>{
-        console.log(gymObj)
+
         return(
             <Gym
                 key={gymObj.id}
+                id = {gymObj.id}
                 name={gymObj.name}
                 rating={gymObj.rating}
                 location={gymObj.location}

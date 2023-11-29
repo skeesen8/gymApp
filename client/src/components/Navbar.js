@@ -6,10 +6,10 @@ function Navbar(){
         <nav className='navbarclass'>
             <ul>
                 <p>
-                    <Link to='/'>Home Page</Link>
+                    <Link to='/AddGym'>Create Gym</Link>
                 </p>
                 <p>
-                    <Link to='/AddGymForm'>Create Gym</Link>
+                    <Link to='/gyms '>All Gym</Link>
                 </p>
             </ul>
         </nav>
