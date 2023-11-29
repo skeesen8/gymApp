@@ -6,6 +6,7 @@ import AddGymForm from "./components/AddGymForm";
 import {createBrowserRouter,RouterProvider} from "react-router-dom"
 import ReactDOM from 'react-dom/client';
 import GymCard from "./components/GymCard";
+import AddReview from "./components/AddReview";
 
 
 
@@ -23,6 +24,9 @@ const routes=[
   },{
     path:"/gyms/:id",
     element:<Gym/>
+  },{
+    path:"/reviews",
+    element:<AddReview/>
   }
   ]
   const router=createBrowserRouter(routes)
