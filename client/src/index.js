@@ -7,6 +7,7 @@ import {createBrowserRouter,RouterProvider} from "react-router-dom"
 import ReactDOM from 'react-dom/client';
 import GymCard from "./components/GymCard";
 import AddReview from "./components/AddReview";
+import GymById from "./components/GymById";
 
 
 
@@ -23,7 +24,7 @@ const routes=[
     element:<AddGymForm />
   },{
     path:"/gyms/:id",
-    element:<Gym/>
+    element:<GymById/>
   },{
     path:"/reviews",
     element:<AddReview/>
