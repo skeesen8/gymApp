@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Link, useParams} from 'react-router-dom';
+import AddReview from './AddReview';
 
 function Gym({  name, rating, location, description, image}) {
     let {id}= useParams()
@@ -32,6 +33,7 @@ function Gym({  name, rating, location, description, image}) {
                 <p>Name : {name}</p>
                 <p>Location : {location}</p>
                 <p>Rating: {rating}</p>
+                <AddReview/>
             </div>
         </div>
 
