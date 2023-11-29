@@ -15,14 +15,14 @@ const routes=[
     path:"/",
     element:<App />
   },{
-    path:"/gyms/<id>",
-    element:<Gym />
-  },{
     path:"/gyms",
     element:<GymCard/>
   },{
     path:"/addgym",
     element:<AddGymForm />
+  },{
+    path:"/gyms/:id",
+    element:<Gym/>
   }
   ]
   const router=createBrowserRouter(routes)
