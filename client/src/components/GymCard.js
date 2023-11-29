@@ -19,7 +19,7 @@ function GymCard(){
                 rating={gymObj.rating}
                 location={gymObj.location}
                 description={gymObj.description}
-                url={gymObj.image}
+                image={gymObj.image}
             />
         )
     })

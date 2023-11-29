@@ -5,10 +5,12 @@ import { useState } from "react";
 function AddReview (){
 
 const [newReview,setReview] = useState('')
+const [newGymId,setGymId] = useState('')
 
     function handleReview (e){
         setReview(e.target.value)
     }
+    
     
     function handleSubmit(e){
         e.preventDefault();
