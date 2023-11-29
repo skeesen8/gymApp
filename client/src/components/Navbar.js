@@ -11,6 +11,9 @@ function Navbar(){
                 <p>
                     <Link to='/gyms '>All Gym</Link>
                 </p>
+                <p>
+                    <Link to='/reviews'>Add Review</Link>
+                </p>
             </ul>
         </nav>
     )
