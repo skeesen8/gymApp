@@ -4,6 +4,7 @@ import React, {useEffect, useState} from "react";
 import GymCard from './GymCard'
 import Navbar from './Navbar'
 import AddGymForm from "./AddGymForm";
+import AddReview from "./AddReview";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Navbar />
 
         <AddGymForm/>
+        <AddReview/>
         <GymCard gyms={gyms}/>
     
     </div>

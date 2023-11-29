@@ -32,8 +32,8 @@ const [newDescription,setDescription]= useState('')
             name:newName,
             rating: newRating,
             image: newUrl,
-            description: newDescription
-            // location: newLocation,
+            description: newDescription,
+            location: newLocation,
         }
         
         fetch("http://localhost:5555/addgym",{

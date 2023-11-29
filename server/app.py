@@ -9,7 +9,7 @@ from flask_restful import Resource
 # Local imports
 from config import app, db, api
 
-from models import Gym 
+from models import Gym,Review,User
 
 # Views go here!
 
@@ -31,7 +31,7 @@ class Gyms(Resource):
             description=params['description'],
             rating= params['rating'],
             image= params['image'],
-            # location = params['location']
+            location = params['location']
             )
         except:
             return make_response({'error':' invalid gym'}, 400)
@@ -52,6 +52,28 @@ class Get_all_gyms(Resource):
         return make_response(gyms, 200)
 
 api.add_resource(Get_all_gyms, '/gyms')
+
+class Reviews(Resource):
+    def get(self):
+        reviews = [r.to_dict() for r in Review.query.all()]
+        if not reviews :
+            return make_response({'error':'no reviews'},400)
+        return make_response(reviews,200)
+
+    def post(self):
+        params = request.json
+        try: 
+            new_review = Review(
+            review_description = params['review_description'], name = params['name'],
+            rating = params['rating'], gym_id =params['gym_id'],user_id = params['user_id']
+            )
+        except:
+            return make_response({'error':' incorrect review'}, 400)
+        db.session.add(new_review)
+        db.session.commit()
+        return make_response(new_review.to_dict(), 201)
+
+api.add_resource(Reviews,'/reviews')
 
 class Get_gym_by_id(Resource):
     def get(self, id):
