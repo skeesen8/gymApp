@@ -27,7 +27,7 @@ function Gym({ id, name, rating, location, description, image, onDelete}) {
     
       return (
         <div className='cards_item'>
-          <img onClick={handleToggle} src={image} alt={name} />
+          <img onClick={handleToggle} src={image} alt={name} className='cards_image'/>
           <button>
             <Link to={`/gyms/${id}`} className="inner-text">
               View Gym
