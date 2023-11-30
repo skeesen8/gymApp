@@ -10,6 +10,7 @@ function GymCard(){
     .then((gymData)=>setGym(gymData))
   },[])
 
+
   const handleDeleteGym = (gymId) => {
     // Implement the logic to delete the gym on the server
     fetch(`http://localhost:5555/gyms/${gymId}`, {

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Link, useParams} from 'react-router-dom';
 import AddReview from './AddReview';
+import GymByIdCard from './GymByIdCard';
 
 function GymById() {
     let {id}= useParams()
@@ -14,24 +15,22 @@ function GymById() {
         .then((gymData)=>setSingle(gymData))
     },[])
     
+    const renderGym = (
+        <GymByIdCard
+            key={single.id}
+            id={single.id}
+            name={single.name}
+            rating={single.rating}
+            location={single.location}
+            description={single.description}
+            image={single.image}
+        />
+    )
 
     
     return(
-        <div className='cards_item'>
-            {/* <img onClick ={handleToggle} src={image} alt={name}/> */}
-            <button><Link to={`/gyms/${id}`} className="inner-text">
-                gym
-            </Link>
-            </button>
-            <div className='card_content'></div>
-            {/* <div className='card_title'>{name}</div> */}
-            {/* <p className='card_text'>{renderDescription ? description : ''}</p>  */}
-            <div className='card_detail'>
-                {/* <p>Name : {name}</p> */}
-                {/* <p>Location : {location}</p> */}
-                {/* <p>Rating: {rating}</p> */}
-                <AddReview/>
-            </div>
+        <div>
+            <h3>{renderGym}</h3>
         </div>
 
     )
