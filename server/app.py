@@ -9,7 +9,7 @@ from flask_restful import Resource
 # Local imports
 from config import app, db, api
 
-from models import Gym,User,Review
+from models import Gym
 
 # Views go here!
 
