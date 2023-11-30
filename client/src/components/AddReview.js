@@ -1,11 +1,27 @@
 import React from "react";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import Navbar from "./Navbar";
+import { useParams } from "react-router-dom";
+
 
 
 function AddReview (){
 
+        let {id}= useParams()
+        const [single, setSingle]=useState([])
+        console.log(id)
+    
+        // useEffect(()=> {
+        //     console.log('Fetching data for id:', id);
+        //     fetch(`http://localhost:5555/gyms/${id}`)
+        //     .then((resp)=> resp.json())
+        //     .then((gymData)=>setSingle(gymData))
+        // },[])
+
 const [newReview,setReview] = useState('')
 const [newGymId,setGymId] = useState('')
+
+
 
     function handleReview (e){
         setReview(e.target.value)
@@ -18,9 +34,8 @@ const [newGymId,setGymId] = useState('')
             name:'Name',
             rating:'rating',
             review_description:newReview,
-            gym_id: null,
+            gym_id: parseInt(id),
             user_id:'user_id'
-        
         }
         console.log(newUserReview)
         fetch("http://localhost:5555/reviews",{
@@ -39,6 +54,7 @@ const [newGymId,setGymId] = useState('')
 
 return(
     <form>
+        <Navbar/>
         <input
         value={newReview}
         onChange={handleReview}
@@ -46,6 +62,17 @@ return(
         type='text'
         name='newReview'
         />
+        {/* <select
+        value = {newGymId}
+        onChange ={handleGymId}
+        placeholder ="select gym"
+        type = 'dropdown'
+        name = 'newGymId'>
+            <option value="someOption"></option>
+            <option value="otherOption">24 Hour Fitness</option>
+
+        </select>
+         */}
 
         <button type = 'submit' onClick={handleSubmit} > Add Review
         </button>

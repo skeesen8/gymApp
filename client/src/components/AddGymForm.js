@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import {useOutletContext} from "react-router-dom"
 import {useNavigate} from "react-router-dom"
+import Navbar from "./Navbar";
 
 function AddGymForm (){
    
@@ -11,9 +12,10 @@ const [newRating,setRating] = useState('')
 const [newUrl,setUrl] = useState('')
 const [newLocation,setLocation]= useState('')
 const [newDescription,setDescription]= useState('')
+const navigate = useNavigate()
 
-    function handleName (e){
-        setName(e.target.value)
+function handleName (e){
+    setName(e.target.value)
     }
     function handleRating(e){
         setRating(e.target.value)
@@ -26,6 +28,10 @@ const [newDescription,setDescription]= useState('')
     }
     function handleDescription(e){
         setDescription(e.target.value)
+    }
+    function handleNavigate(){
+        navigate('/gyms')
+    
     }
     function handleSubmit(e){
         window.alert('gym added')
@@ -48,13 +54,13 @@ const [newDescription,setDescription]= useState('')
         })
         .then(response => response.text())
         .then(console.log)
-       
-        
+        handleNavigate()
 
     }
 
 return(
     <form>
+        <Navbar/>
         <input
         value={newName}
         onChange={handleName}
