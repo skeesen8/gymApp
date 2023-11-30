@@ -9,8 +9,8 @@ function GymCard(){
     .then((resp)=> resp.json())
     .then((gymData)=>setGym(gymData))
   },[])
+  console.log(gyms)
     const renderGym = gyms.map((gymObj) =>{
-
         return(
             <Gym
                 key={gymObj.id}
