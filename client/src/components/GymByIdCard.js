@@ -1,6 +1,6 @@
 import AddReview from "./AddReview"
 
-export default function GymByIdCard({single}){
+export default function GymByIdCard({single,setSingle}){
     const renderReviews = single?.reviews?.map((review)=>{
         return (
         <ul>
@@ -26,7 +26,7 @@ export default function GymByIdCard({single}){
                 <p>Rating: {single.rating}</p>
                 <p>Reviews: {renderReviews}</p>
 
-                <AddReview/>
+                <AddReview setSingle={setSingle}/>
                 
             </div>
         </div>

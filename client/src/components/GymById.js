@@ -18,6 +18,7 @@ function GymById() {
     const renderGym = (
         <GymByIdCard
             single={single}
+            setSingle={setSingle}
         />
     )
 
