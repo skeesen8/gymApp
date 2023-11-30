@@ -43,7 +43,7 @@ body {
   margin-bottom: 20px;
 }
 
-
+/* Style for the form */
 
 .add-gym-form {
   margin-top: 20px;
@@ -84,47 +84,49 @@ body {
 
 
 .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
   list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; 
+  padding: 20px;
 }
 
 .cards_item {
   background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 10px; 
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
-  flex: 1 0 300px; 
 }
 
 .cards_item:hover {
   transform: scale(1.05);
 }
 
-.card_image {
+.cards_image {
   width: 100%;
-  height: auto;
+  height: 150px;
+  object-fit: cover;
   cursor: pointer;
+  border-bottom: 1px solid #ddd;
+  border-radius: 15px 15px 0 0;
 }
 
-.card_content,
-.card_title,
-.card_text,
-.card_detail {
-  padding: 10px;
+.card_content {
+  padding: 20px;
 }
 
 .card_title {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
 }
 
 .card_text {
   font-size: 1rem;
+  margin-bottom: 10px;
+  color: #555;
 }
 
 .card_detail {
@@ -153,9 +155,14 @@ button:hover {
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #3494e6, #ec6e64);
+  background-image: url('https://t4.ftcdn.net/jpg/01/02/52/83/360_F_102528344_XfIuLtPSSBIIR3NYtLRe1QOBUgkdS8Cp.jpg');
+
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  
+  color: #ffffff;
 }
 
 
@@ -190,4 +197,3 @@ body {
 .navbarclass a:hover {
   color: #ffa500;
 }
-
