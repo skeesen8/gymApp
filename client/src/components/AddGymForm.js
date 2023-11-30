@@ -34,6 +34,7 @@ function handleName (e){
     
     }
     function handleSubmit(e){
+        window.alert('gym added')
         e.preventDefault();
         const newGym = {
             name:newName,
@@ -42,6 +43,7 @@ function handleName (e){
             description: newDescription,
             location: newLocation,
         }
+       
         
         fetch("http://localhost:5555/addgym",{
             method:"POST",
@@ -105,6 +107,7 @@ return(
     </form>
 
 )
+
 }
 
 export default AddGymForm

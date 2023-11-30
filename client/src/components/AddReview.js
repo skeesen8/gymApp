@@ -36,8 +36,6 @@ const [newGymId,setGymId] = useState('')
             review_description:newReview,
             gym_id: parseInt(id),
             user_id:'user_id'
-            
-
         }
         console.log(newUserReview)
         fetch("http://localhost:5555/reviews",{
@@ -82,6 +80,7 @@ return(
     </form>
 
 )
+
 }
 
 export default AddReview

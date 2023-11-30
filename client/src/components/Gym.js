@@ -6,7 +6,7 @@ import Navbar from './Navbar';
 function Gym({ id, name, rating, location, description, image, onDelete}) {
 
    
-    const [renderDescription, setRenderDescription] = useState(true)
+    const [renderDescription, setRenderDescription] = useState(false)
     const handleToggle = () => {
         setRenderDescription(!renderDescription)
     }
