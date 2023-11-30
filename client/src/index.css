@@ -182,7 +182,7 @@ body {
 }
 
 .navbarclass {
-  background-color: #3494e6;
+  background-color: transparent;
   color: #fff;
   font-family: Arial, sans-serif;
   padding: 10px;
@@ -207,4 +207,42 @@ body {
 
 .navbarclass a:hover {
   color: #ffa500;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.single-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.single-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.single-content {
+  padding: 15px;
+}
+
+.single_title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.single-details {
+  font-size: 14px;
+}
+
+/* Style for the AddReview component */
+.add-review-container {
+  margin-top: 10px;
 }
