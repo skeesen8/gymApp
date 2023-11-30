@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Gym from './Gym'
+import Navbar from './Navbar';
 
 function GymCard(){
     const [gyms, setGym]=useState([])
@@ -34,7 +35,7 @@ function GymCard(){
   const renderGym = gyms.map((gymObj) => {
     return (
       <Gym
-        key={gymObj.id}
+      key={gymObj.id}
         id={gymObj.id}
         name={gymObj.name}
         rating={gymObj.rating}
@@ -42,11 +43,12 @@ function GymCard(){
         description={gymObj.description}
         image={gymObj.image}
         onDelete={handleDeleteGym}
-      />
-    );
-  });
-
-  return <ul className='cards'>{renderGym}</ul>;
+        />
+        );
+      });
+      
+      return <ul className='cards'>{renderGym}
+      </ul>;
 }
 
 export default GymCard
