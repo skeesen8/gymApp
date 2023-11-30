@@ -5,10 +5,9 @@ import { useParams } from "react-router-dom";
 
 
 
-function AddReview (){
+function AddReview ({setSingle}){
 
         let {id}= useParams()
-        const [single, setSingle]=useState([])
         console.log(id)
     
         // useEffect(()=> {
@@ -19,23 +18,27 @@ function AddReview (){
         // },[])
 
 const [newReview,setReview] = useState('')
-const [newGymId,setGymId] = useState('')
+const [newName,setName] = useState('')
 
 
 
     function handleReview (e){
         setReview(e.target.value)
     }
+    function handleName(e){
+        setName(e.target.value)
+    }
     
     
     function handleSubmit(e){
         e.preventDefault();
+        window.alert('review added')
         const newUserReview = {
-            name:'Name',
+            name:newName,
             rating:'rating',
             review_description:newReview,
             gym_id: parseInt(id),
-            user_id:'user_id'
+            user_id:null
         }
         console.log(newUserReview)
         fetch("http://localhost:5555/reviews",{
@@ -46,15 +49,23 @@ const [newGymId,setGymId] = useState('')
             body:JSON.stringify(newUserReview),
         })
         .then(response => response.json())
-        .then(console.log)
+        .then((newReview)=> setSingle(currentSingle=>({...currentSingle,reviews:[...currentSingle.reviews,newReview]})))
+        
         
         
 
     }
 
 return(
-    <form>
-        {/* <Navbar/> */}
+    <form onSubmit = {handleSubmit}>
+        <input
+        value={newName}
+        onChange = {handleName}
+        placeholder = "Enter Name Here"
+        type = 'text'
+        name = 'newName'
+        />
+        
         <input
         value={newReview}
         onChange={handleReview}
@@ -62,19 +73,9 @@ return(
         type='text'
         name='newReview'
         />
-        {/* <select
-        value = {newGymId}
-        onChange ={handleGymId}
-        placeholder ="select gym"
-        type = 'dropdown'
-        name = 'newGymId'>
-            <option value="someOption"></option>
-            <option value="otherOption">24 Hour Fitness</option>
+       
 
-        </select>
-         */}
-
-        <button type = 'submit' onClick={handleSubmit} > Add Review
+        <button type = 'submit' > Add Review
         </button>
        
     </form>
