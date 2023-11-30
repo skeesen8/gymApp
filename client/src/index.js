@@ -17,10 +17,11 @@ import Home from "./components/Home";
 
 
 
+
 const routes=[
     {
     path:"/",
-    element:<><App /><Home/></>
+    element:<><Navbar /><Home/></>
   },{
     path:"/gyms",
     element:<><Navbar /><GymCard/></>

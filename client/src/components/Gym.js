@@ -33,7 +33,7 @@ function Gym({ id, name, rating, location, description, image, onDelete}) {
             {/* <p>Location : {location}</p> */}
             <p>Rating: {rating}</p>
             {/* <AddReview/> */}
-            <Navbar/>
+            
           </div>
           <button onClick={handleDelete}>Delete Gym</button>
         </div>
