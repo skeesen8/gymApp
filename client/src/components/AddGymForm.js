@@ -60,7 +60,6 @@ function handleName (e){
 
 return(
     <form>
-        <Navbar/>
         <input
         value={newName}
         onChange={handleName}
@@ -93,13 +92,13 @@ return(
         name = 'newDescription'
         />
 
-        <input
+        {/* <input
         value = {newLocation}
         onChange = {handleLocation}
         placeholder="Add Location"
         type = 'text'
         name = 'newLocation'
-        />
+        /> */}
 
         <button type = 'submit' onClick={handleSubmit} > Add Gym
         </button>

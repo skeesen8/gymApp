@@ -19,19 +19,19 @@ import Navbar from "./components/Navbar"
 const routes=[
     {
     path:"/",
-    element:<><App /><Navbar /></>
+    element:<><App /></>
   },{
     path:"/gyms",
-    element:<><GymCard/><Navbar /></>
+    element:<><Navbar /><GymCard/></>
   },{
     path:"/addgym",
-    element:<><AddGymForm /><Navbar /></>
+    element:<><Navbar /><AddGymForm /></>
   },{
     path:"/gyms/:id",
-    element:<><GymById/><Navbar /></>
+    element:<><Navbar /><GymById/></>
   },{
     path:"/reviews",
-    element:<><AddReview/><Navbar /></>
+    element:<><Navbar /><AddReview/></>
   },{
 
   }
