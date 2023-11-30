@@ -30,7 +30,7 @@ function Gym({ id, name, rating, location, description, image, onDelete}) {
           <p className='card_text'>{renderDescription ? description : ''}</p>
           <div className='card_detail'>
             <p>Name : {name}</p>
-            <p>Location : {location}</p>
+            {/* <p>Location : {location}</p> */}
             <p>Rating: {rating}</p>
             {/* <AddReview/> */}
             <Navbar/>

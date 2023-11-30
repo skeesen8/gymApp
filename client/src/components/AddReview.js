@@ -54,7 +54,7 @@ const [newGymId,setGymId] = useState('')
 
 return(
     <form>
-        <Navbar/>
+        {/* <Navbar/> */}
         <input
         value={newReview}
         onChange={handleReview}
