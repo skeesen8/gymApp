@@ -5,10 +5,9 @@ import { useParams } from "react-router-dom";
 
 
 
-function AddReview (){
+function AddReview ({setSingle}){
 
         let {id}= useParams()
-        const [single, setSingle]=useState([])
         console.log(id)
     
         // useEffect(()=> {
@@ -50,7 +49,7 @@ const [newName,setName] = useState('')
             body:JSON.stringify(newUserReview),
         })
         .then(response => response.json())
-        .then(console.log)
+        .then((newReview)=> setSingle(currentSingle=>({...currentSingle,reviews:[...currentSingle.reviews,newReview]})))
         
         
         
@@ -58,7 +57,7 @@ const [newName,setName] = useState('')
     }
 
 return(
-    <form>
+    <form onSubmit = {handleSubmit}>
         <input
         value={newName}
         onChange = {handleName}
@@ -76,7 +75,7 @@ return(
         />
        
 
-        <button type = 'submit' onClick={handleSubmit} > Add Review
+        <button type = 'submit' > Add Review
         </button>
        
     </form>
