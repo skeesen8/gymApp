@@ -9,6 +9,9 @@ import GymCard from "./components/GymCard";
 import AddReview from "./components/AddReview";
 import GymById from "./components/GymById";
 import GymByIdCard from "./components/GymByIdCard";
+import MainPage from "./components/MainPage"
+import Navbar from "./components/Navbar"
+
 
 
 
@@ -16,19 +19,21 @@ import GymByIdCard from "./components/GymByIdCard";
 const routes=[
     {
     path:"/",
-    element:<App />
+    element:<><App /><Navbar /></>
   },{
     path:"/gyms",
-    element:<GymCard/>
+    element:<><GymCard/><Navbar /></>
   },{
     path:"/addgym",
-    element:<AddGymForm />
+    element:<><AddGymForm /><Navbar /></>
   },{
     path:"/gyms/:id",
-    element:<GymById/>
+    element:<><GymById/><Navbar /></>
   },{
     path:"/reviews",
-    element:<AddReview/>
+    element:<><AddReview/><Navbar /></>
+  },{
+
   }
   ]
   const router=createBrowserRouter(routes)

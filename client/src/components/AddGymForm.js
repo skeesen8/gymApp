@@ -28,6 +28,7 @@ const [newDescription,setDescription]= useState('')
         setDescription(e.target.value)
     }
     function handleSubmit(e){
+        window.alert('gym added')
         e.preventDefault();
         const newGym = {
             name:newName,
@@ -36,6 +37,7 @@ const [newDescription,setDescription]= useState('')
             description: newDescription,
             location: newLocation,
         }
+       
         
         fetch("http://localhost:5555/addgym",{
             method:"POST",
@@ -46,6 +48,7 @@ const [newDescription,setDescription]= useState('')
         })
         .then(response => response.text())
         .then(console.log)
+       
         
 
     }
@@ -98,6 +101,7 @@ return(
     </form>
 
 )
+
 }
 
 export default AddGymForm

@@ -12,7 +12,10 @@ function Navbar(){
                     <Link to='/gyms '>All Gym</Link>
                 </p>
                 <p>
-                    <Link to='/reviews'>Add Review</Link>
+                    {/* <Link to='/reviews'>Add Review</Link>
+                </p>
+                <p>
+                    <Link to='./MainPage'>Home</Link> */}
                 </p>
             </ul>
         </nav>
