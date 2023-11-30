@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Link, useParams} from 'react-router-dom';
 import AddReview from './AddReview';
+import Navbar from './Navbar';
 
 function Gym({ id, name, rating, location, description, image, onDelete}) {
 
@@ -31,7 +32,8 @@ function Gym({ id, name, rating, location, description, image, onDelete}) {
             <p>Name : {name}</p>
             <p>Location : {location}</p>
             <p>Rating: {rating}</p>
-            <AddReview/>
+            {/* <AddReview/> */}
+            <Navbar/>
           </div>
           <button onClick={handleDelete}>Delete Gym</button>
         </div>

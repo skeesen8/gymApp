@@ -1,21 +1,21 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-function Navbar(){
+function Header(){
     return(
         <nav className='navbarclass'>
             <ul>
                 <p>
-                    <Link to='/AddGym'>Add Gym</Link>
+                    <Link to='/AddGym'>Create Gym</Link>
                 </p>
                 <p>
-                    <Link to='/gyms '>All Gyms</Link>
+                    <Link to='/gyms '>All Gym</Link>
                 </p>
-                {/* <p>
+                <p>
                     <Link to='/reviews'>Add Review</Link>
-                </p> */}
+                </p>
             </ul>
         </nav>
     )
 }
-export default Navbar
+export default Header
