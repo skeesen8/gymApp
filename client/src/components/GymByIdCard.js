@@ -1,14 +1,31 @@
 import AddReview from "./AddReview"
 
-export default function GymByIdCard({name, rating, image}){
+export default function GymByIdCard({single}){
+    const renderReviews = single?.reviews?.map((review)=>{
+        return (
+        <ul>
+             <li className="review-name">By:  {review.name}</li>
+            <li className="review-description">Review:  {review.review_description} </li>
+           
+        </ul>
+        )
+        
+
+    })
+    
+    
     return(
         <div>
-            <img className= 'single-image'src={image}/>
-            <div className='single_title'>{name}</div>
+            <img className= 'single-image'src={single.image}/>
+            <div className='single_title'>{single.name}</div>
             
             <div className='single-details'>
 
-                <p>Rating: {rating}</p>
+                <p>description: {single.description} </p>
+                <p>location: {single.location} </p>
+                <p>Rating: {single.rating}</p>
+                <p>Reviews: {renderReviews}</p>
+
                 <AddReview/>
                 
             </div>
