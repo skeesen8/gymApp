@@ -17,13 +17,7 @@ function GymById() {
     
     const renderGym = (
         <GymByIdCard
-            key={single.id}
-            id={single.id}
-            name={single.name}
-            rating={single.rating}
-            location={single.location}
-            description={single.description}
-            image={single.image}
+            single={single}
         />
     )
 

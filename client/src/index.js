@@ -11,6 +11,7 @@ import GymById from "./components/GymById";
 import GymByIdCard from "./components/GymByIdCard";
 import MainPage from "./components/MainPage"
 import Navbar from "./components/Navbar"
+import Home from "./components/Home";
 
 
 
@@ -19,7 +20,7 @@ import Navbar from "./components/Navbar"
 const routes=[
     {
     path:"/",
-    element:<><App /></>
+    element:<><App /><Home/></>
   },{
     path:"/gyms",
     element:<><Navbar /><GymCard/></>
