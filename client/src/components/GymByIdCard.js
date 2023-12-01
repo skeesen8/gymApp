@@ -1,4 +1,4 @@
-import AddReview from "./AddReview"
+import AddReview from "./AddReview";
 
 export default function GymByIdCard({single,setSingle}){
     const renderReviews = single?.reviews?.map((review)=>{
@@ -32,4 +32,3 @@ export default function GymByIdCard({single,setSingle}){
         </div>
   )
 }
-
