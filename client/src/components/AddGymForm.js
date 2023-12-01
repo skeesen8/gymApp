@@ -9,6 +9,7 @@ function AddGymForm() {
   const [newDescription, setDescription] = useState("");
   const navigate = useNavigate();
 
+
   function handleName(e) {
     setName(e.target.value);
   }

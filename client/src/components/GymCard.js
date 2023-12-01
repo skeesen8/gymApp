@@ -43,6 +43,7 @@ function GymCard(){
         description={gymObj.description}
         image={gymObj.image}
         onDelete={handleDeleteGym}
+        setGym={setGym}
         />
         );
       });

@@ -6,14 +6,17 @@ import Navbar from './Navbar'
 import Home from "./Home";
 import AddGymForm from "./AddGymForm";
 import AddReview from "./AddReview";
+import Gym from "./Gym";
 
 
 function App() {
 
-  
+
   return (
     <div className='mainpage'>
         <Navbar />
+  
+
         
         
     
