@@ -265,7 +265,30 @@ body {
 .add-review-container {
   margin-top: 10px;
 }
+
+.single-gym-review{
+  display: inline; /* the default for span */
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+
+ 
+  
+}
+.toggle-review-description {
+  background-color: #ff0000; /* Green */
+  border: 1px solid rgb(251, 255, 0);
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+
+}
+
 .home {
   text-align: center;
   margin-top: 2rem;
 }
+
