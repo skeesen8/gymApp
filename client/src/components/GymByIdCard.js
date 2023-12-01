@@ -1,3 +1,4 @@
+
 import { useState } from "react"
 import AddReview from "./AddReview"
 
@@ -7,6 +8,7 @@ export default function GymByIdCard({single}){
         setViewReview(!viewReview)
     }
     const renderReviews = single?.reviews?.map((review)=>{  
+
         return (
         <div className="reviews-container">
             <h3 className="review-name">By:  {review.name}</h3>
@@ -37,10 +39,11 @@ export default function GymByIdCard({single}){
             </div>
                 
 
+
+                <AddReview setSingle={setSingle}/>
                 
                 
            
         </div>
   )
 }
-
