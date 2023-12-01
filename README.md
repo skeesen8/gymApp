@@ -1,4 +1,5 @@
-# Phase 4 Full-Stack Application Project Template
+# Gym App
+This app is designed to allow users to find and review popular gyms.  Users are able to add gyms, reviews as well as look through all of the gyms that are added to the database by other users to see gym information.  
 
 ## Learning Goals
 
@@ -109,17 +110,9 @@ different machine if the need arises.
 
 ### `server/`
 
-The `server/` directory contains all of your backend code.
+The `server/` directory contains all of our backend code.
 
-`app.py` is your Flask application. You'll want to use Flask to build a simple
-API backend like we have in previous modules. You should use Flask-RESTful for
-your routes. You should be familiar with `models.py` and `seed.py` by now, but
-remember that you will need to use Flask-SQLAlchemy, Flask-Migrate, and
-SQLAlchemy-Serializer instead of SQLAlchemy and Alembic in your models.
-
-The project contains a default `Pipfile` with some basic dependencies. You may
-adapt the `Pipfile` if there are additional dependencies you want to add for
-your project.
+`app.py` is our Flask application. 
 
 To download the dependencies for the backend server, run:
 
@@ -135,16 +128,12 @@ running:
 python server/app.py
 ```
 
-Check that your server serves the default route `http://localhost:5555`. You
-should see a web page with the heading "Project Server".
-
 ### `client/`
 
-The `client/` directory contains all of your frontend code. The file
+The `client/` directory contains all of our frontend code. The file
 `package.json` has been configured with common React application dependencies,
-include `react-router-dom`. The file also sets the `proxy` field to forward
-requests to `"http://localhost:5555". Feel free to change this to another port-
-just remember to configure your Flask app to use another port as well!
+including `react-router-dom`. The file also sets the `proxy` field to forward
+requests to `"http://localhost:5555".
 
 To download the dependencies for the frontend client, run:
 
@@ -158,10 +147,6 @@ running:
 ```sh
 npm start --prefix client
 ```
-
-Check that your the React client displays a default page
-`http://localhost:3000`. You should see a web page with the heading "Project
-Client".
 
 ## Generating Your Database
 
@@ -200,18 +185,6 @@ structure:
 └── seed.py
 ```
 
-Edit `models.py` and start creating your models. Import your models as needed in
-other modules, i.e. `from models import ...`.
-
-Remember to regularly run
-`flask db revision --autogenerate -m'<descriptive message>'`, replacing
-`<descriptive message>` with an appropriate message, and `flask db upgrade head`
-to track your modifications to the database and create checkpoints in case you
-ever need to roll those modifications back.
-
-> **Tip: It's always a good idea to start with an empty revision! This allows
-> you to roll all the way back while still holding onto your database. You can
-> create this empty revision with `flask db revision -m'Create DB'`.**
 
 If you want to seed your database, now would be a great time to write out your
 `seed.py` script and run it to generate some test data. Faker has been included
