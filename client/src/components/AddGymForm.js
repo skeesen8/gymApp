@@ -7,7 +7,7 @@ import Navbar from "./Navbar";
 
 function AddGymForm (){
    
-
+const [newGym,setNewGym] = useState('')
 const [newName,setName] = useState('')
 const [newRating,setRating] = useState('')
 const [newUrl,setUrl] = useState('')
@@ -53,11 +53,39 @@ function handleName (e){
             },
             body:JSON.stringify(newGym),
         })
-        .then(response => response.text())
+        .then(response => response.json())
+        .then((newGym)=> setNewGym(currentSingle=>({...currentSingle,gyms:[...currentSingle.reviews,newGym]})))
         .then(console.log)
         handleNavigate()
 
     }
+
+    // function handleSubmit(e){
+    //     e.preventDefault();
+    //     window.alert('review added')
+    //     const newUserReview = {
+    //         name:newName,
+    //         rating:'rating',
+    //         review_description:newReview,
+    //         gym_id: parseInt(id),
+    //         user_id:null
+    //     }
+    //     console.log(newUserReview)
+    //     fetch("http://localhost:5555/reviews",{
+    //         method:"POST",
+    //         headers:{
+    //             "Content-Type": "application/json",
+    //         },
+    //         body:JSON.stringify(newUserReview),
+    //     })
+    //     .then(response => response.json())
+    //     .then((newReview)=> setSingle(currentSingle=>({...currentSingle,reviews:[...currentSingle.reviews,newReview]})))
+        
+        
+        
+
+    // }
+
 
 return(
     <form>
