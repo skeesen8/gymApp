@@ -1,13 +1,19 @@
+import { useState } from "react"
 import AddReview from "./AddReview"
 
 export default function GymByIdCard({single}){
-    const renderReviews = single?.reviews?.map((review)=>{
+    const [viewReview, setViewReview] = useState(false)
+    function toggleReview(){
+        setViewReview(!viewReview)
+    }
+    const renderReviews = single?.reviews?.map((review)=>{  
         return (
-        <ul>
-             <li className="review-name">By:  {review.name}</li>
-            <li className="review-description">Review:  {review.review_description} </li>
+        <div className="reviews-container">
+            <h3 className="review-name">By:  {review.name}</h3>
+            <button className= 'toggle-review-description 'onClick={toggleReview} > Reviews </button>
+            <h3 className="review-description"> {viewReview ? review.review_description: ''}</h3>
            
-        </ul>
+        </div>
         )
         
 
@@ -24,11 +30,16 @@ export default function GymByIdCard({single}){
                 <p>description: {single.description} </p>
                 <p>location: {single.location} </p>
                 <p>Rating: {single.rating}</p>
-                <p>Reviews: {renderReviews}</p>
-
                 <AddReview/>
-                
             </div>
+            <div className="single-gym-review">
+                <p>Reviews: {renderReviews}</p>
+            </div>
+                
+
+                
+                
+           
         </div>
   )
 }
