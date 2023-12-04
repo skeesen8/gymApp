@@ -2,7 +2,7 @@
 import { useState } from "react"
 import AddReview from "./AddReview"
 
-export default function GymByIdCard({single}){
+export default function GymByIdCard({single,setSingle}){
     const [viewReview, setViewReview] = useState(false)
     function toggleReview(){
         setViewReview(!viewReview)
@@ -32,7 +32,6 @@ export default function GymByIdCard({single}){
                 <p>description: {single.description} </p>
                 <p>location: {single.location} </p>
                 <p>Rating: {single.rating}</p>
-                <AddReview/>
             </div>
             <div className="single-gym-review">
                 <p>Reviews: {renderReviews}</p>
